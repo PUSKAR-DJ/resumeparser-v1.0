@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Parser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Parser</h1>
+        <form id="resumeForm">
+            <div class="form-group">
+                <label for="resume">Upload Resume (PDF):</label>
+                <input type="file" id="resume" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="results" id="results">
+            <!-- Insights and percentage match will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Logic to handle file upload and job description input
+            // and to display insights and percentage match
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<p>Processing...</p>';
+            
+            // Simulate processing and display results
+            setTimeout(() => {
+                resultsDiv.innerHTML = `
+                    <h2>Insights</h2>
+                    <p>Skills Match: 80%</p>
+                    <p>Experience Match: 75%</p>
+                    <p>Overall Match: 78%</p>
+                `;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
